@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import "./company-logos.css";
 
 type Company = {
@@ -106,17 +107,49 @@ function Logo({
 }: {
   company: Company;
 }) {
+  const [src, setSrc] = useState(company.logo);
+  const [failed, setFailed] = useState(false);
+
+  const handleLogoError = () => {
+    if (
+      company.name === "Syngenta" &&
+      src === "/branding/companies/syngenta.svg"
+    ) {
+      setSrc("/branding/companies/syngenta.png");
+      return;
+    }
+
+    if (
+      company.name === "Syngenta" &&
+      src === "/branding/companies/syngenta.png"
+    ) {
+      setFailed(true);
+      return;
+    }
+
+    setFailed(true);
+  };
+
   return (
     <div
       className="company-logo-item"
       aria-label={company.name}
     >
       <div className="company-logo-item__box">
-        <img
-          src={company.logo}
-          alt={company.name}
-          className="company-logo-item__image"
-        />
+        {failed ? (
+          <span className="company-logo-item__fallback">
+            {company.name}
+          </span>
+        ) : (
+          <img
+            src={src}
+            alt={company.name}
+            className="company-logo-item__image"
+            loading="lazy"
+            decoding="async"
+            onError={handleLogoError}
+          />
+        )}
       </div>
     </div>
   );

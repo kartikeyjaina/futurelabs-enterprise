@@ -156,9 +156,9 @@
 
   flex-shrink: 0;
 
-  gap: 18px;
+  gap: 8px;
 
-  padding-right: 18px;
+  padding-right: 8px;
 }
 
 
@@ -175,11 +175,51 @@
 
   justify-content: center;
 
-  width: 105px;
+  width: 96px;
 
   height: 42px;
 
   cursor: default;
+}
+
+
+/* ==================================================
+   LOGO BOX
+   ================================================== */
+
+.company-logo-item__box {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3px;
+
+  overflow: hidden;
+}
+
+.company-logo-item__fallback {
+  display: block;
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #667085;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.02em;
+
+  text-align: center;
 }
 
 
@@ -200,10 +240,11 @@
 
   object-fit: contain;
 
-  opacity: 1;
+  opacity: 0.94;
 
   transition:
-    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 260ms ease;
 }
 
 .company-logo-item:hover
@@ -220,7 +261,7 @@
 .company-marquee__track {
   animation:
     company-scroll-right
-    30s
+    52s
     linear
     infinite;
 }
@@ -229,7 +270,7 @@
 .company-marquee__track {
   animation:
     company-scroll-left
-    30s
+    56s
     linear
     infinite;
 }
@@ -253,7 +294,7 @@
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
 }
 
@@ -264,7 +305,7 @@
 
 @keyframes company-scroll-left {
   from {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
 
   to {
@@ -319,19 +360,19 @@
   }
 
   .company-marquee__set {
-    gap: 10px;
+    gap: 7px;
 
-    padding-right: 10px;
+    padding-right: 7px;
   }
 
   .company-logo-item {
-    width: 80px;
+    width: 78px;
 
     height: 38px;
   }
 
   .company-logo-item__image {
-    max-width: 80px;
+    max-width: 72px;
 
     max-height: 30px;
   }
@@ -365,21 +406,26 @@
   }
 
   .company-marquee__set {
-    gap: 28px;
+    gap: 6px;
 
-    padding-right: 28px;
+    padding-right: 6px;
   }
 
   .company-logo-item {
-    width: 85px;
+    width: 72px;
 
     height: 38px;
   }
 
   .company-logo-item__image {
-    max-width: 85px;
+    max-width: 66px;
 
-    max-height: 30px;
+    max-height: 28px;
+  }
+
+  .company-logo-item__fallback {
+    max-width: 64px;
+    font-size: 8px;
   }
 
   .company-logos__footer {
@@ -395,6 +441,27 @@
 /* ==================================================
    REDUCED MOTION
    ================================================== */
+
+@media (max-width: 360px) {
+  .company-conveyor {
+    gap: 10px;
+  }
+
+  .company-marquee__set {
+    gap: 5px;
+    padding-right: 5px;
+  }
+
+  .company-logo-item {
+    width: 66px;
+    height: 34px;
+  }
+
+  .company-logo-item__image {
+    max-width: 60px;
+    max-height: 25px;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
 
