@@ -152,12 +152,10 @@ export function CompanyLogos() {
         </div>
 
         <div>
-          <div className="company-logos__eyebrow">
-            SELECTED CLIENTS
-          </div>
+
 
           <h2>
-            COMPANY LOGOS{" "}
+            Organisations weve worked with
           </h2>
         </div>
       </div>
@@ -203,12 +201,6 @@ export function CompanyLogos() {
 
       </div>
 
-      {/* FOOTER */}
-      <div className="company-logos__footer">
-        <span>22 ORGANISATIONS</span>
-        <span>•</span>
-        <span>SELECTED CLIENTS</span>
-      </div>
-    </section>
+            </section>
   );
 }
