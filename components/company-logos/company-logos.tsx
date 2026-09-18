@@ -46,55 +46,55 @@ const companies: Company[] = [
   },
   {
     name: "Syngenta",
-    logo: "/branding/companies/syngenta.png",
+    logo: "/branding/companies/syngenta.svg",
   },
   {
-    name: "Company 11",
-    logo: "/branding/companies/company-11.png",
+    name: "Sony",
+    logo: "/branding/companies/sony.png",
   },
   {
-    name: "Company 12",
-    logo: "/branding/companies/company-12.png",
+    name: "Aisect",
+    logo: "/branding/companies/aisect.png",
   },
   {
-    name: "Company 13",
-    logo: "/branding/companies/company-13.png",
+    name: "Kaivalya",
+    logo: "/branding/companies/kaivalya.png",
   },
   {
-    name: "Company 14",
-    logo: "/branding/companies/company-14.png",
+    name: "Cms",
+    logo: "/branding/companies/cms.png",
   },
   {
-    name: "Company 15",
-    logo: "/branding/companies/company-15.png",
+    name: "Swasti",
+    logo: "/branding/companies/swasti.png",
   },
   {
-    name: "Company 16",
-    logo: "/branding/companies/company-16.png",
+    name: "i-saksham",
+    logo: "/branding/companies/i-saksham.png",
   },
   {
-    name: "Company 17",
-    logo: "/branding/companies/company-17.png",
+    name: "isdm",
+    logo: "/branding/companies/isdm.png",
   },
   {
-    name: "Company 18",
-    logo: "/branding/companies/company-18.png",
+    name: "culver-max",
+    logo: "/branding/companies/culver-max.png",
   },
   {
-    name: "Company 19",
-    logo: "/branding/companies/company-19.png",
+    name: "dhwani",
+    logo: "/branding/companies/dhwani.png",
   },
   {
-    name: "Company 20",
-    logo: "/branding/companies/company-20.png",
+    name: "Quantum",
+    logo: "/branding/companies/quantum.png",
   },
   {
-    name: "Company 21",
-    logo: "/branding/companies/company-21.png",
+    name: "imm",
+    logo: "/branding/companies/imm.png",
   },
   {
-    name: "Company 22",
-    logo: "/branding/companies/company-22.png",
+    name: "irma",
+    logo: "/branding/companies/irma.png",
   },
 ];
 
@@ -158,7 +158,6 @@ export function CompanyLogos() {
 
           <h2>
             COMPANY LOGOS{" "}
-            <span>(INTERACTIVE)</span>
           </h2>
         </div>
       </div>
