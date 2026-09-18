@@ -3,6 +3,36 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* FutureLab design system */
+
+  --section-x: 32px;
+
+  --section-y: 56px;
+
+  --section-y-tablet: 48px;
+
+  --section-y-mobile: 40px;
+
+  --section-gap: 22px;
+
+  --section-gap-mobile: 18px;
+
+  --content-width: 1380px;
+
+  --border: #e3e8f0;
+
+  --border-light: #e7eaf0;
+
+  --text: #101828;
+
+  --text-secondary: #667085;
+
+  --text-muted: #98a2b3;
+
+  --accent: #526eff;
+
+  --radius: 7px;
 }
 
 @theme inline {
@@ -14,13 +44,118 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0;
+
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+section {
+  scroll-margin-top: 76px;
+}
+
+/*
+   Global section rhythm.
+
+   The hero keeps its own composition.
+   The remaining sections share one
+   vertical rhythm so the page feels
+   like one continuous system.
+*/
+
+.company-logos,
+.company-project-grid,
+.individual-project-grid,
+.what-we-do,
+.our-approach,
+.client-testimonials,
+.work-with-us {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+}
+
+/*
+   Shared maximum-width language.
+*/
+
+.company-project-grid__container,
+.individual-project-grid__container,
+.client-testimonials__container,
+.work-with-us__container {
+  width: min(
+    var(--content-width),
+    calc(100% - (var(--section-x) * 2))
+  );
+}
+
+/*
+   Sections should visually hand off to
+   one another rather than creating giant
+   gaps between unrelated blocks.
+*/
+
+.company-logos__header,
+.company-project-grid__header,
+.individual-project-grid__header,
+.what-we-do__header,
+.client-testimonials__header {
+  margin-bottom: var(--section-gap);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --section-x: 20px;
+  }
+
+  .company-logos,
+  .company-project-grid,
+  .individual-project-grid,
+  .what-we-do,
+  .our-approach,
+  .client-testimonials,
+  .work-with-us {
+    padding-top: var(--section-y-tablet);
+    padding-bottom: var(--section-y-tablet);
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --section-x: 14px;
+  }
+
+  .company-logos,
+  .company-project-grid,
+  .individual-project-grid,
+  .what-we-do,
+  .our-approach,
+  .client-testimonials,
+  .work-with-us {
+    padding-top: var(--section-y-mobile);
+    padding-bottom: var(--section-y-mobile);
+  }
 }
