@@ -1,0 +1,408 @@
+/* ==================================================
+   SECTION
+   ================================================== */
+
+.company-logos {
+  position: relative;
+
+  width: 100%;
+
+  padding: 110px 0 105px;
+
+  overflow: hidden;
+
+  background: #f8f9fc;
+
+  color: #111827;
+}
+
+
+/* ==================================================
+   HEADER
+   ================================================== */
+
+.company-logos__header {
+  position: relative;
+  z-index: 2;
+
+  width: min(1320px, calc(100% - 80px));
+
+  margin: 0 auto 45px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 28px;
+}
+
+.company-logos__index {
+  padding-top: 4px;
+
+  color: #7e899c;
+
+  font-family: monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.06em;
+}
+
+.company-logos__eyebrow {
+  margin-bottom: 9px;
+
+  color: #647187;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+.company-logos__header h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: clamp(30px, 3.4vw, 48px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+}
+
+.company-logos__header h2 span {
+  color: #9ba5b6;
+
+  font-size: 0.46em;
+
+  font-weight: 400;
+
+  letter-spacing: -0.015em;
+}
+
+
+/* ==================================================
+   CONVEYOR
+   ================================================== */
+
+.company-conveyor {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 28px;
+}
+
+
+/* ==================================================
+   MARQUEE
+   ================================================== */
+
+.company-marquee {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      #000 5%,
+      #000 95%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      #000 5%,
+      #000 95%,
+      transparent 100%
+    );
+}
+
+
+/* ==================================================
+   TRACK
+   ================================================== */
+
+.company-marquee__track {
+  display: flex;
+
+  width: max-content;
+
+  will-change: transform;
+}
+
+
+/* ==================================================
+   LOGO SET
+   ================================================== */
+
+.company-marquee__set {
+  display: flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  gap: 18px;
+
+  padding-right: 18px;
+}
+
+
+/* ==================================================
+   LOGO
+   ================================================== */
+
+.company-logo-item {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 105px;
+
+  height: 42px;
+
+  cursor: default;
+}
+
+
+/* ==================================================
+   IMAGE
+   ================================================== */
+
+.company-logo-item__image {
+  display: block;
+
+  width: auto;
+
+  height: auto;
+
+  max-width: 120px;
+
+  max-height: 42px;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.company-logo-item:hover
+.company-logo-item__image {
+  transform: scale(1.06);
+}
+
+
+/* ==================================================
+   ANIMATION
+   ================================================== */
+
+.company-marquee--right
+.company-marquee__track {
+  animation:
+    company-scroll-right
+    30s
+    linear
+    infinite;
+}
+
+.company-marquee--left
+.company-marquee__track {
+  animation:
+    company-scroll-left
+    30s
+    linear
+    infinite;
+}
+
+
+/* Pause on hover */
+
+.company-marquee:hover
+.company-marquee__track {
+  animation-play-state: paused;
+}
+
+
+/* ==================================================
+   RIGHT
+   ================================================== */
+
+@keyframes company-scroll-right {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ==================================================
+   LEFT
+   ================================================== */
+
+@keyframes company-scroll-left {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+.company-logos__footer {
+  width: min(1320px, calc(100% - 80px));
+
+  margin: 30px auto 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #8b96a8;
+
+  font-family: monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+
+  .company-logos {
+    padding: 85px 0 85px;
+  }
+
+  .company-logos__header {
+    width: calc(100% - 40px);
+
+    margin-bottom: 38px;
+  }
+
+  .company-conveyor {
+    gap: 22px;
+  }
+
+  .company-marquee__set {
+    gap: 10px;
+
+    padding-right: 10px;
+  }
+
+  .company-logo-item {
+    width: 80px;
+
+    height: 38px;
+  }
+
+  .company-logo-item__image {
+    max-width: 80px;
+
+    max-height: 30px;
+  }
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 600px) {
+
+  .company-logos {
+    padding: 70px 0 75px;
+  }
+
+  .company-logos__header {
+    width: calc(100% - 28px);
+
+    gap: 15px;
+
+    margin-bottom: 32px;
+  }
+
+  .company-logos__header h2 {
+    font-size: 28px;
+  }
+
+  .company-conveyor {
+    gap: 18px;
+  }
+
+  .company-marquee__set {
+    gap: 28px;
+
+    padding-right: 28px;
+  }
+
+  .company-logo-item {
+    width: 85px;
+
+    height: 38px;
+  }
+
+  .company-logo-item__image {
+    max-width: 85px;
+
+    max-height: 30px;
+  }
+
+  .company-logos__footer {
+    width: calc(100% - 28px);
+
+    margin-top: 25px;
+
+    font-size: 7px;
+  }
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .company-marquee__track {
+    animation-play-state: paused !important;
+  }
+
+  .company-logo-item__image {
+    transition: none;
+  }
+}
