@@ -1,6 +1,7 @@
 
 .company-project-grid {
   position: relative;
+  isolation: isolate;
   width: 100%;
   padding: 90px 0 80px;
 
@@ -41,6 +42,15 @@
   letter-spacing: 0.08em;
 
   color: #344054;
+}
+
+.company-project-grid__title {
+  min-width: 0;
+}
+
+.company-project-grid__controls {
+  align-self: start;
+  margin-top: 18px;
 }
 
 .company-project-grid__title > span {
@@ -268,9 +278,6 @@
 }
 
 .company-project-card:hover {
-  flex-basis: 270px;
-  width: 270px;
-
   transform: translateY(-3px);
 
   box-shadow:
@@ -466,6 +473,22 @@
 /* --------------------------------
    TABLET
 -------------------------------- */
+
+@media (max-width: 1100px) {
+  .company-project-grid__content {
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .company-project-card {
+    flex-basis: 210px;
+    width: 210px;
+  }
+
+  .company-project-card:hover {
+    transform: translateY(-3px);
+  }
+}
 
 @media (max-width: 900px) {
   .company-project-grid__container {
