@@ -11,7 +11,7 @@ const links = [
   { label: "Work", href: "#work" },
   { label: "Capabilities", href: "#capabilities" },
   { label: "Approach", href: "#approach" },
-  { label: "About", href: "#about" },
+  { label: "Contact", href: "#work-with-us" },
 ];
 
 export function Navbar() {
