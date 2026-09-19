@@ -587,3 +587,29 @@
     height: 170px;
   }
 }
+
+
+@media (max-width: 650px) {
+  .individual-project-grid__rail-wrap {
+    width: calc(100% + var(--section-x));
+    margin-right: calc(-1 * var(--section-x));
+  }
+
+  .individual-project-grid__rail {
+    width: 100%;
+    max-width: none;
+    padding-right: var(--section-x);
+    padding-left: 0;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .individual-project-card,
+  .individual-project-card:hover {
+    flex: 0 0 min(82vw, 310px);
+    width: min(82vw, 310px);
+    transform: none;
+  }
+}
