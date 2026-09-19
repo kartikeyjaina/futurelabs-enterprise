@@ -1367,3 +1367,12 @@ small {
     margin-left: 28px;
   }
 }
+
+
+/* The explanatory detail card is a desktop-only element.
+   On tablet/mobile the step descriptions already provide the needed context. */
+@media (max-width: 1100px) {
+  .our-approach__detail-shell {
+    display: none;
+  }
+}
