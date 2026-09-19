@@ -398,32 +398,6 @@ export function OurApproach() {
             </div>
           </div>
 
-          {/* BOTTOM PROGRESS */}
-
-          <div className="our-approach__bottom">
-            <span>
-              {
-                steps[activeStep]
-                  .number
-              }
-              <small>/06</small>
-            </span>
-
-            <div className="our-approach__bottom-line">
-              <span
-                style={{
-                  width: `${
-                    progress * 100
-                  }%`,
-                }}
-              />
-            </div>
-
-            <span>
-              SCROLL TO EXPLORE
-            </span>
-          </div>
-
         </div>
       </div>
     </section>

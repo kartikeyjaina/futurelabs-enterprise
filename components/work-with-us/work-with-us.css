@@ -581,3 +581,46 @@
     font-size: 0.88rem;
   }
 }
+
+
+@media (max-width: 600px) {
+  .work-with-us__panel {
+    border-radius: var(--radius);
+  }
+
+  .work-with-us__intro {
+    padding: 34px 22px 30px;
+  }
+
+  .work-with-us__intro h2 {
+    max-width: 9ch;
+  }
+
+  .work-with-us__intro p {
+    max-width: 32rem;
+    margin-top: 16px;
+  }
+
+  .work-with-us__button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .work-with-us__content {
+    min-height: 0;
+    padding: 28px 22px 190px;
+  }
+
+  .work-with-us__points {
+    max-width: none;
+    margin-top: 26px;
+  }
+
+  .work-with-us__visual {
+    right: 50%;
+    bottom: 18px;
+    top: auto;
+    transform: translateX(50%) scale(.85);
+    opacity: .7;
+  }
+}

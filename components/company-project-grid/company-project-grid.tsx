@@ -282,7 +282,7 @@ export function CompanyProjectGrid() {
 
             <div className="company-project-grid__count">
               <strong>20</strong>
-              <span>Organisations</span>
+              <span>Enterprises</span>
             </div>
 
             <p>

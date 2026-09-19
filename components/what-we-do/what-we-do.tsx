@@ -198,10 +198,6 @@ export function WhatWeDo() {
         {/* HEADER */}
 
         <header className="what-we-do__header">
-          <span className="what-we-do__section-number">
-            06
-          </span>
-
           <h2>WHAT WE DO</h2>
         </header>
 
@@ -250,10 +246,6 @@ export function WhatWeDo() {
               key={activeService.id}
               className="what-we-do__content"
             >
-              <span className="what-we-do__content-number">
-                {activeService.number}
-              </span>
-
               <h3>{activeService.title}</h3>
 
               <p>
@@ -288,19 +280,6 @@ export function WhatWeDo() {
               service={activeService}
             />
           </div>
-        </div>
-
-        {/* FOOTER */}
-
-        <div className="what-we-do__footer">
-          <span>
-            {activeService.number}
-            <span>/06</span>
-          </span>
-
-          <span>
-            SELECT A SERVICE TO EXPLORE
-          </span>
         </div>
 
       </div>

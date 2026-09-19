@@ -357,3 +357,30 @@
     font-size: 0.88rem;
   }
 }
+
+
+@media (max-width: 600px) {
+  .site-footer__container {
+    width: calc(100% - (var(--section-x) * 2));
+    padding: 22px 18px 18px;
+  }
+
+  .site-footer__main {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 18px;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer__column a {
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .site-footer__bottom {
+    padding-top: 18px;
+  }
+}

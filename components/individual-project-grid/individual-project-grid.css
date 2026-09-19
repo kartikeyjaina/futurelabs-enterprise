@@ -1,6 +1,7 @@
 
 .individual-project-grid {
   position: relative;
+  isolation: isolate;
   width: 100%;
   padding: 90px 0 80px;
 
@@ -19,8 +20,8 @@
 
 .individual-project-grid__header {
   display: grid;
-  grid-template-columns: 48px 1fr auto;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
 
   gap: 18px;
 
@@ -37,6 +38,15 @@
   letter-spacing: 0.08em;
 
   color: #344054;
+}
+
+.individual-project-grid__title {
+  min-width: 0;
+}
+
+.individual-project-grid__controls {
+  align-self: start;
+  margin-top: 18px;
 }
 
 .individual-project-grid__title > span {
@@ -208,7 +218,8 @@
 
   gap: 14px;
 
-  width: max-content;
+  width: 100%;
+  min-width: 0;
 
   overflow-x: auto;
   overflow-y: hidden;
@@ -249,9 +260,6 @@
 }
 
 .individual-project-card:hover {
-  flex-basis: 270px;
-  width: 270px;
-
   transform: translateY(-3px);
 
   box-shadow:
@@ -437,6 +445,22 @@
 
 /* TABLET */
 
+@media (max-width: 1100px) {
+  .individual-project-grid__content {
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .individual-project-card {
+    flex-basis: 210px;
+    width: 210px;
+  }
+
+  .individual-project-card:hover {
+    transform: translateY(-3px);
+  }
+}
+
 @media (max-width: 900px) {
   .individual-project-grid__container {
     width: calc(100% - 40px);
@@ -465,8 +489,7 @@
   }
 
   .individual-project-grid__header {
-    grid-template-columns: 30px 1fr auto;
-
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 12px;
   }
 
@@ -585,5 +608,31 @@
 
   .individual-project-card__preview {
     height: 170px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .individual-project-grid__rail-wrap {
+    width: calc(100% + var(--section-x));
+    margin-right: calc(-1 * var(--section-x));
+  }
+
+  .individual-project-grid__rail {
+    width: 100%;
+    max-width: none;
+    padding-right: var(--section-x);
+    padding-left: 0;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .individual-project-card,
+  .individual-project-card:hover {
+    flex: 0 0 min(82vw, 310px);
+    width: min(82vw, 310px);
+    transform: none;
   }
 }

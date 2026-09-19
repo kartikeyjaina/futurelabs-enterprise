@@ -984,3 +984,454 @@ small {
     font-size: 0.88rem;
   }
 }
+
+
+@media (max-width: 700px) {
+  .our-approach {
+    height: auto;
+    padding: var(--section-y) 0;
+  }
+
+  .our-approach__sticky {
+    position: relative;
+    top: auto;
+    padding: 0 var(--section-x);
+  }
+
+  .our-approach__panel {
+    min-height: 0;
+    padding: 22px 18px 20px;
+    border-radius: var(--radius);
+  }
+
+  .our-approach__eyebrow {
+    margin-bottom: 28px;
+  }
+
+  .our-approach__layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .our-approach__intro {
+    padding-left: 0;
+  }
+
+  .our-approach__intro h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .our-approach__intro p {
+    max-width: 34rem;
+    font-size: .9rem;
+  }
+
+  .our-approach__process {
+    padding-top: 0;
+  }
+
+  .our-approach__curve,
+  .our-approach__bottom {
+    display: none;
+  }
+
+  .our-approach__timeline {
+    overflow: visible;
+  }
+
+  .our-approach__line {
+    left: 10px;
+    right: auto;
+    top: 7px;
+    bottom: 7px;
+    width: 1px;
+    height: auto;
+  }
+
+  .our-approach__line > span {
+    width: 100% !important;
+    height: 0;
+  }
+
+  .our-approach__steps {
+    display: grid;
+    gap: 4px;
+  }
+
+  .our-approach__step {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: start;
+    min-height: 70px;
+    padding: 0;
+  }
+
+  .our-approach__number {
+    grid-column: 1;
+    height: 24px;
+    padding-top: 1px;
+    font-size: .7rem;
+    color: var(--text-faint);
+  }
+
+  .our-approach__node {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 21px;
+    height: 21px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .our-approach__node > span {
+    width: 9px;
+    height: 9px;
+  }
+
+  .our-approach__step-copy {
+    grid-column: 2;
+    min-height: 0;
+    padding: 0 0 18px;
+  }
+
+  .our-approach__step-copy strong {
+    font-size: .92rem;
+  }
+
+  .our-approach__step-copy small {
+    max-width: 30rem;
+    margin-top: 5px;
+    font-size: .78rem;
+  }
+
+  .our-approach__detail-shell {
+    height: auto;
+    margin: 2px 0 18px 28px;
+  }
+
+  .our-approach__detail {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 10px;
+    min-height: 0;
+    padding: 14px;
+  }
+
+  .our-approach__detail-visual {
+    display: none;
+  }
+
+  .our-approach__detail-text strong {
+    font-size: .88rem;
+  }
+
+  .our-approach__detail-text p {
+    font-size: .76rem;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE APPROACH LAYOUT
+   Horizontal while six steps fit. Vertical once they do not.
+========================================================= */
+
+/* Desktop: all six steps remain visible in one horizontal timeline. */
+@media (min-width: 1101px) {
+  .our-approach {
+    height: 220vh;
+  }
+
+  .our-approach__sticky {
+    top: 24px;
+    padding: 28px var(--section-x);
+  }
+
+  .our-approach__panel {
+    width: min(1240px, 100%);
+    min-height: 610px;
+    padding: 28px 30px 24px;
+  }
+
+  .our-approach__layout {
+    grid-template-columns: minmax(190px, 225px) minmax(0, 1fr);
+    gap: 42px;
+  }
+
+  .our-approach__process {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .our-approach__steps {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .our-approach__step {
+    min-width: 0;
+    padding-inline: 6px;
+  }
+
+  .our-approach__step-copy {
+    min-width: 0;
+  }
+
+  .our-approach__step-copy strong {
+    font-size: 0.8rem;
+  }
+
+  .our-approach__step-copy small {
+    max-width: 120px;
+    font-size: 0.68rem;
+  }
+
+  .our-approach__detail-shell {
+    height: 120px;
+  }
+
+  .our-approach__bottom {
+    left: 297px;
+  }
+}
+
+/* Tablet and smaller laptop: switch the process itself to a vertical list.
+   Nothing is allowed to be horizontally clipped just to preserve the desktop
+   composition. */
+@media (max-width: 1100px) {
+  .our-approach {
+    height: auto;
+    padding-block: var(--section-y);
+  }
+
+  .our-approach__sticky {
+    position: relative;
+    top: auto;
+    padding: 0 var(--section-x);
+  }
+
+  .our-approach__panel {
+    width: 100%;
+    min-height: 0;
+    padding: 28px 26px 30px;
+  }
+
+  .our-approach__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .our-approach__intro {
+    padding-left: 0;
+  }
+
+  .our-approach__intro h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1;
+  }
+
+  .our-approach__intro p {
+    max-width: 520px;
+    font-size: 0.9rem;
+  }
+
+  .our-approach__process {
+    padding-top: 0;
+  }
+
+  .our-approach__curve {
+    display: none;
+  }
+
+  .our-approach__timeline {
+    overflow: visible;
+  }
+
+  .our-approach__line {
+    left: 9px;
+    right: auto;
+    top: 7px;
+    bottom: 7px;
+    width: 1px;
+    height: auto;
+  }
+
+  .our-approach__line > span {
+    width: 100% !important;
+    height: 0;
+  }
+
+  .our-approach__steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 100%;
+  }
+
+  .our-approach__step {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr);
+    align-items: start;
+    min-height: 82px;
+    padding: 0;
+  }
+
+  .our-approach__number {
+    grid-column: 1;
+    height: 24px;
+    padding-top: 1px;
+    font-size: 0.7rem;
+  }
+
+  .our-approach__node {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .our-approach__step-copy {
+    grid-column: 2;
+    min-height: 0;
+    padding: 0 0 22px;
+  }
+
+  .our-approach__step-copy strong,
+  .our-approach__step--active .our-approach__step-copy strong {
+    font-size: 1rem;
+    transform: none;
+  }
+
+  .our-approach__step-copy small {
+    max-width: 520px;
+    margin-top: 6px;
+    font-size: 0.82rem;
+  }
+
+  .our-approach__detail-shell {
+    height: auto;
+    margin: 4px 0 0 30px;
+  }
+
+  .our-approach__detail {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .our-approach__detail-visual {
+    display: none;
+  }
+
+  .our-approach__bottom {
+    display: none;
+  }
+}
+
+/* Small mobile keeps the same vertical structure, with tighter spacing. */
+@media (max-width: 600px) {
+  .our-approach__panel {
+    padding: 22px 18px 24px;
+  }
+
+  .our-approach__layout {
+    gap: 28px;
+  }
+
+  .our-approach__intro h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .our-approach__step {
+    min-height: 70px;
+  }
+
+  .our-approach__step-copy {
+    padding-bottom: 18px;
+  }
+
+  .our-approach__step-copy strong,
+  .our-approach__step--active .our-approach__step-copy strong {
+    font-size: 0.92rem;
+  }
+
+  .our-approach__step-copy small {
+    font-size: 0.78rem;
+  }
+
+  .our-approach__detail-shell {
+    margin-left: 28px;
+  }
+}
+
+
+/* The explanatory detail card is a desktop-only element.
+   On tablet/mobile the step descriptions already provide the needed context. */
+@media (max-width: 1100px) {
+  .our-approach__detail-shell {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   APPROACH TYPOGRAPHY
+   Match the readable scale used across the rest of the site.
+========================================================= */
+
+@media (min-width: 1101px) {
+  .our-approach__eyebrow {
+    font-size: 0.75rem;
+  }
+
+  .our-approach__intro h2 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .our-approach__intro p {
+    max-width: 18rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .our-approach__learn {
+    font-size: 0.85rem;
+  }
+
+  .our-approach__number {
+    font-size: 0.72rem;
+  }
+
+  .our-approach__step-copy strong,
+  .our-approach__step--active .our-approach__step-copy strong {
+    font-size: 0.95rem;
+  }
+
+  .our-approach__step-copy small {
+    max-width: 11rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .our-approach__detail-number {
+    font-size: 0.78rem;
+  }
+
+  .our-approach__detail-text strong {
+    font-size: 0.95rem;
+  }
+
+  .our-approach__detail-text p {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .our-approach__bottom {
+    font-size: 0.75rem;
+  }
+}

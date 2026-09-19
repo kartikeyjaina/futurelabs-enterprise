@@ -1,6 +1,7 @@
 
 .company-project-grid {
   position: relative;
+  isolation: isolate;
   width: 100%;
   padding: 90px 0 80px;
 
@@ -41,6 +42,15 @@
   letter-spacing: 0.08em;
 
   color: #344054;
+}
+
+.company-project-grid__title {
+  min-width: 0;
+}
+
+.company-project-grid__controls {
+  align-self: start;
+  margin-top: 18px;
 }
 
 .company-project-grid__title > span {
@@ -224,7 +234,8 @@
 
   gap: 14px;
 
-  width: max-content;
+  width: 100%;
+  min-width: 0;
 
   overflow-x: auto;
   overflow-y: hidden;
@@ -267,9 +278,6 @@
 }
 
 .company-project-card:hover {
-  flex-basis: 270px;
-  width: 270px;
-
   transform: translateY(-3px);
 
   box-shadow:
@@ -466,6 +474,22 @@
    TABLET
 -------------------------------- */
 
+@media (max-width: 1100px) {
+  .company-project-grid__content {
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .company-project-card {
+    flex-basis: 210px;
+    width: 210px;
+  }
+
+  .company-project-card:hover {
+    transform: translateY(-3px);
+  }
+}
+
 @media (max-width: 900px) {
   .company-project-grid__container {
     width: calc(100% - 40px);
@@ -645,5 +669,168 @@
 
   .company-project-grid__info p {
     font-size: 0.88rem;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .company-project-grid__rail-wrap {
+    width: calc(100% + var(--section-x));
+    margin-right: calc(-1 * var(--section-x));
+  }
+
+  .company-project-grid__rail {
+    width: 100%;
+    max-width: none;
+    padding-right: var(--section-x);
+    padding-left: 0;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .company-project-card,
+  .company-project-card:hover {
+    flex: 0 0 min(82vw, 310px);
+    width: min(82vw, 310px);
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP / DESKTOP STABILITY
+   Keep the section heading and controls in one predictable row.
+========================================================= */
+
+.company-project-grid__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+}
+
+.company-project-grid__title {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.company-project-grid__title > span {
+  margin-bottom: 8px;
+}
+
+.company-project-grid__title h2 {
+  max-width: 24ch;
+}
+
+.company-project-grid__controls {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  margin: 18px 0 0 auto;
+}
+
+.company-project-grid__content {
+  width: 100%;
+  min-width: 0;
+  margin-left: 0;
+  grid-template-columns: 145px minmax(0, 1fr);
+}
+
+.company-project-grid__rail-wrap {
+  min-width: 0;
+  width: 100%;
+}
+
+.company-project-grid__rail {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .company-project-grid__container {
+    width: min(100% - 48px, 1100px);
+  }
+
+  .company-project-grid__content {
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .company-project-card,
+  .company-project-card:hover {
+    flex-basis: 210px;
+    width: 210px;
+    transform: none;
+  }
+
+  .company-project-card__preview {
+    height: 130px;
+  }
+}
+
+@media (max-width: 700px) {
+  .company-project-grid__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .company-project-grid__controls {
+    margin-top: 0;
+  }
+
+  .company-project-grid__content {
+    display: block;
+  }
+}
+
+
+/* Keep the organization copy inside its column so it can never sit under the rail. */
+.company-project-grid__content {
+  grid-template-columns: minmax(145px, 160px) minmax(0, 1fr);
+  gap: 28px;
+}
+
+.company-project-grid__info {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.company-project-grid__count {
+  min-width: 0;
+}
+
+.company-project-grid__count span {
+  max-width: 100%;
+  font-size: clamp(1.35rem, 1.8vw, 1.6rem);
+  overflow-wrap: break-word;
+}
+
+.company-project-grid__info p {
+  max-width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .company-project-grid__content {
+    grid-template-columns: 145px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .company-project-grid__count span {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .company-project-grid__content {
+    display: block;
+  }
+
+  .company-project-grid__info {
+    overflow: visible;
   }
 }
