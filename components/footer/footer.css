@@ -1,3 +1,4 @@
+
 .site-footer {
   position: relative;
 
@@ -306,5 +307,53 @@
     align-items: flex-start;
 
     gap: 7px;
+  }
+}
+
+/* =========================================================
+   FUTURELAB FOOTER
+========================================================= */
+
+.site-footer {
+  background: #f1f4f8;
+  border-top: 1px solid var(--border);
+}
+
+.site-footer__container {
+  border-radius: var(--radius);
+}
+
+.site-footer__column h3 {
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.site-footer__column a {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.site-footer__brand p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.site-footer__notes {
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .site-footer__column h3 {
+    font-size: 0.78rem;
+  }
+
+  .site-footer__column a {
+    font-size: 0.85rem;
+  }
+
+  .site-footer__brand p {
+    font-size: 0.88rem;
   }
 }

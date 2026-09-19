@@ -180,13 +180,7 @@ export function CompanyLogos() {
     >
       {/* HEADER */}
       <div className="company-logos__header">
-        <div className="company-logos__index">
-          03
-        </div>
-
         <div>
-
-
           <h2>
             Organisations weve worked with
           </h2>

@@ -1,3 +1,4 @@
+
 .individual-project-grid {
   position: relative;
   width: 100%;
@@ -529,5 +530,60 @@
 
   .individual-project-grid__progress-label {
     display: none;
+  }
+}
+
+/* =========================================================
+   FUTURELAB INDIVIDUAL PROJECTS
+========================================================= */
+
+.individual-project-grid {
+  background: var(--background);
+}
+
+.individual-project-grid__title h2 {
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+}
+
+.individual-project-grid__label {
+  font-size: 0.72rem;
+  padding: 7px 10px;
+}
+
+.individual-project-grid__count strong {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.individual-project-grid__count span {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+.individual-project-grid__info p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.individual-project-card {
+  border-radius: 12px;
+}
+
+.individual-project-card h3 {
+  font-size: 1rem;
+}
+
+.individual-project-card__tags span,
+.individual-project-card__link {
+  font-size: 0.72rem;
+}
+
+@media (max-width: 650px) {
+  .individual-project-card,
+  .individual-project-card:hover {
+    flex-basis: min(82vw, 300px);
+    width: min(82vw, 300px);
+  }
+
+  .individual-project-card__preview {
+    height: 170px;
   }
 }

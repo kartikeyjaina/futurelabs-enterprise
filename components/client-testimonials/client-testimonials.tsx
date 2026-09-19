@@ -197,29 +197,7 @@ export function ClientTestimonials() {
               ),
             )}
           </div>
-
-          {/* BEHAVIOUR NOTES */}
-
-          <div className="client-testimonials__notes">
-            <span>
-              • Quote fades in
-            </span>
-
-            <span>
-              • Numbers count up
-            </span>
-
-            <span>
-              • Client avatar omitted
-            </span>
-
-            <span>
-              • Carousel of selected quotes
-            </span>
-          </div>
-
           {/* CONTROLS */}
-
           <div className="client-testimonials__controls">
             {testimonials.map(
               (_, index) => (

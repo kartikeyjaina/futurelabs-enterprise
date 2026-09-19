@@ -1,3 +1,4 @@
+
 .work-with-us {
   position: relative;
 
@@ -521,5 +522,62 @@
     align-items: flex-start;
 
     gap: 6px;
+  }
+}
+
+
+/* =========================================================
+   FUTURELAB WORK WITH US
+========================================================= */
+
+.work-with-us {
+  background: var(--background);
+}
+
+.work-with-us__intro h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 0.98;
+}
+
+.work-with-us__intro p,
+.work-with-us__statement p {
+  font-size: clamp(0.95rem, 1.05vw, 1.08rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.work-with-us__points p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.work-with-us__points span {
+  font-size: 0.72rem;
+}
+
+.work-with-us__button {
+  min-height: 52px;
+  font-size: 0.9rem;
+  border-radius: 9px;
+}
+
+@media (max-width: 900px) {
+  .work-with-us__intro h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-with-us__intro h2 {
+    font-size: 2.1rem;
+  }
+
+  .work-with-us__intro p,
+  .work-with-us__statement p {
+    font-size: 0.95rem;
+  }
+
+  .work-with-us__points p {
+    font-size: 0.88rem;
   }
 }

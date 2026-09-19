@@ -186,3 +186,42 @@
     display: block;
   }
 }
+
+
+/* =========================================================
+   FUTURELAB NAVIGATION
+========================================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid var(--border-soft);
+  backdrop-filter: blur(16px);
+}
+
+.navbar__inner {
+  width: min(
+    var(--content-width),
+    calc(100% - (var(--section-x) * 2))
+  );
+  min-height: var(--nav-height);
+  margin: 0 auto;
+}
+
+.navbar__link {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.navbar__brand {
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .navbar__link {
+    font-size: 0.9rem;
+  }
+}

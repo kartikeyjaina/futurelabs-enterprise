@@ -916,3 +916,71 @@ small {
     display: none;
   }
 }
+
+/* =========================================================
+   FUTURELAB APPROACH
+========================================================= */
+
+.our-approach {
+  background: var(--surface-soft);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.our-approach__eyebrow {
+  font-size: 0.72rem;
+}
+
+.our-approach__intro h2 {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.our-approach__step-copy,
+.our-approach__detail-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.our-approach__detail-number {
+  font-size: 0.82rem;
+}
+
+.our-approach__bottom {
+  font-size: 0.78rem;
+}
+
+@media (max-width: 900px) {
+  .our-approach__intro h2 {
+    font-size: 1.05rem;
+  }
+
+  .our-approach__step-copy,
+  .our-approach__detail-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .our-approach {
+    min-height: auto;
+  }
+
+  .our-approach__sticky {
+    position: relative;
+    top: 0;
+  }
+
+  .our-approach__panel {
+    min-height: auto;
+  }
+
+  .our-approach__intro h2 {
+    font-size: 1rem;
+  }
+
+  .our-approach__step-copy,
+  .our-approach__detail-text {
+    font-size: 0.88rem;
+  }
+}

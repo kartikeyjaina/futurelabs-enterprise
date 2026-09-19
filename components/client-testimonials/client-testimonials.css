@@ -1,3 +1,4 @@
+
 .client-testimonials {
   position: relative;
 
@@ -495,5 +496,81 @@
   .client-testimonials__controls {
     right: 20px;
     top: 20px;
+  }
+}
+
+
+/* =========================================================
+   FUTURELAB TESTIMONIALS
+========================================================= */
+
+.client-testimonials {
+  background: var(--background);
+}
+
+.client-testimonials__header h2 {
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+}
+
+.client-testimonials__panel {
+  border-radius: var(--radius);
+  background:
+    radial-gradient(
+      circle at 78% 45%,
+      rgba(82, 110, 255, 0.055),
+      transparent 35%
+    ),
+    var(--surface);
+}
+
+.client-testimonials__quote blockquote {
+  max-width: 620px;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.25;
+}
+
+.client-testimonials__person strong {
+  font-size: 0.8rem;
+}
+
+.client-testimonials__person small {
+  font-size: 0.72rem;
+}
+
+.client-testimonials__stat strong {
+  font-size: clamp(1.7rem, 2.6vw, 2.25rem);
+}
+
+.client-testimonials__stat span {
+  max-width: 150px;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.client-testimonials__notes {
+  font-size: 0.7rem;
+}
+
+@media (max-width: 850px) {
+  .client-testimonials__quote blockquote {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .client-testimonials__quote blockquote {
+    font-size: 1.2rem;
+  }
+
+  .client-testimonials__stat {
+    min-height: 88px;
+  }
+
+  .client-testimonials__stat strong {
+    font-size: 1.65rem;
+  }
+
+  .client-testimonials__stat span {
+    font-size: 0.72rem;
   }
 }

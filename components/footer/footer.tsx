@@ -160,7 +160,7 @@ export function Footer() {
         <div className="site-footer__bottom">
 
           <span>
-            © 2024 FutureLab Studio.
+            © 2026 FutureLab Studio.
             All rights reserved.
           </span>
 
@@ -169,15 +169,6 @@ export function Footer() {
           </span>
 
         </div>
-
-        {/* NOTES */}
-
-        <div className="site-footer__notes">
-          <span>• Clean and minimal</span>
-          <span>• No heavy animation</span>
-          <span>• Always accessible links</span>
-        </div>
-
       </div>
     </footer>
   );

@@ -1,3 +1,4 @@
+
 .what-we-do {
   position: relative;
   width: 100%;
@@ -585,5 +586,62 @@
 
   .what-we-do__step {
     width: 135px;
+  }
+}
+
+
+
+/* =========================================================
+   FUTURELAB WHAT WE DO
+========================================================= */
+
+.what-we-do {
+  background: var(--background);
+}
+
+.what-we-do__header h2 {
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+}
+
+.what-we-do__content {
+  color: var(--text);
+}
+
+.what-we-do__content-number {
+  font-size: clamp(2rem, 3vw, 2.7rem);
+}
+
+.what-we-do__content h3 {
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.what-we-do__content > p {
+  font-size: clamp(0.95rem, 1.1vw, 1.08rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.what-we-do__step,
+.what-we-do__feature {
+  font-size: 0.9rem;
+}
+
+.what-we-do__step-icon {
+  width: 34px;
+  height: 34px;
+}
+
+@media (max-width: 650px) {
+  .what-we-do__content {
+    padding: 30px 20px;
+  }
+
+  .what-we-do__content h3 {
+    font-size: 1.75rem;
+  }
+
+  .what-we-do__content > p {
+    font-size: 0.95rem;
   }
 }
