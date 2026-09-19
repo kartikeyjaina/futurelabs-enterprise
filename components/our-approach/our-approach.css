@@ -984,3 +984,148 @@ small {
     font-size: 0.88rem;
   }
 }
+
+
+@media (max-width: 700px) {
+  .our-approach {
+    height: auto;
+    padding: var(--section-y) 0;
+  }
+
+  .our-approach__sticky {
+    position: relative;
+    top: auto;
+    padding: 0 var(--section-x);
+  }
+
+  .our-approach__panel {
+    min-height: 0;
+    padding: 22px 18px 20px;
+    border-radius: var(--radius);
+  }
+
+  .our-approach__eyebrow {
+    margin-bottom: 28px;
+  }
+
+  .our-approach__layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .our-approach__intro {
+    padding-left: 0;
+  }
+
+  .our-approach__intro h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .our-approach__intro p {
+    max-width: 34rem;
+    font-size: .9rem;
+  }
+
+  .our-approach__process {
+    padding-top: 0;
+  }
+
+  .our-approach__curve,
+  .our-approach__bottom {
+    display: none;
+  }
+
+  .our-approach__timeline {
+    overflow: visible;
+  }
+
+  .our-approach__line {
+    left: 10px;
+    right: auto;
+    top: 7px;
+    bottom: 7px;
+    width: 1px;
+    height: auto;
+  }
+
+  .our-approach__line > span {
+    width: 100% !important;
+    height: 0;
+  }
+
+  .our-approach__steps {
+    display: grid;
+    gap: 4px;
+  }
+
+  .our-approach__step {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: start;
+    min-height: 70px;
+    padding: 0;
+  }
+
+  .our-approach__number {
+    grid-column: 1;
+    height: 24px;
+    padding-top: 1px;
+    font-size: .7rem;
+    color: var(--text-faint);
+  }
+
+  .our-approach__node {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 21px;
+    height: 21px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .our-approach__node > span {
+    width: 9px;
+    height: 9px;
+  }
+
+  .our-approach__step-copy {
+    grid-column: 2;
+    min-height: 0;
+    padding: 0 0 18px;
+  }
+
+  .our-approach__step-copy strong {
+    font-size: .92rem;
+  }
+
+  .our-approach__step-copy small {
+    max-width: 30rem;
+    margin-top: 5px;
+    font-size: .78rem;
+  }
+
+  .our-approach__detail-shell {
+    height: auto;
+    margin: 2px 0 18px 28px;
+  }
+
+  .our-approach__detail {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 10px;
+    min-height: 0;
+    padding: 14px;
+  }
+
+  .our-approach__detail-visual {
+    display: none;
+  }
+
+  .our-approach__detail-text strong {
+    font-size: .88rem;
+  }
+
+  .our-approach__detail-text p {
+    font-size: .76rem;
+  }
+}
