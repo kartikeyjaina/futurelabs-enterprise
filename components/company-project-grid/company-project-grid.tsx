@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import "./company-project-grid.css";
 
 type Project = {
@@ -9,6 +9,7 @@ type Project = {
   image: string;
   tags: string[];
   href: string;
+  linkLabel: string;
 };
 
 const projects: Project[] = [
@@ -18,139 +19,71 @@ const projects: Project[] = [
     image: "/projects/chat_easy.avif",
     tags: ["Knowledge and learning"],
     href: "https://futurelabstudios.com/products-for-enterprise/chateasy",
+    linkLabel: "View product",
   },
   {
     id: 2,
-    title: "SearchEasy",
+    title: "ClientEasy",
     image: "/projects/company-02.jpg",
-    tags: ["Agents", "Automation"],
-    href: "https://example.com",
+    tags: ["AI CRM", "Client Management", "Predictive Scoring"],
+    href: "https://futurelabstudios.com/products-for-enterprise/clienteasy/",
+    linkLabel: "View product",
   },
   {
     id: 3,
-    title: "Manufacturing Operations AI",
+    title: "MarketEasy",
     image: "/projects/company-03.jpg",
-    tags: ["Computer Vision", "IoT"],
-    href: "https://example.com",
+    tags: ["Market Research", "Competitor Tracking", "Trend Forecasting"],
+    href: "https://futurelabstudios.com/products-for-enterprise/marketeasy/",
+    linkLabel: "View product",
   },
   {
     id: 4,
-    title: "Enterprise Intelligence Platform",
+    title: "AI Voice Agents",
     image: "/projects/company-04.jpg",
-    tags: ["AI", "Analytics"],
-    href: "https://example.com",
+    tags: ["Customer service", "Support", "Automation"],
+    href: "https://futurelabstudios.com/our-work/",
+    linkLabel: "Explore tools",
   },
   {
     id: 5,
-    title: "Customer Experience Engine",
+    title: "Knowledge Chatbots",
     image: "/projects/company-05.jpg",
-    tags: ["AI", "CX"],
-    href: "https://example.com",
+    tags: ["Knowledge base", "AI", "Enterprise"],
+    href: "https://futurelabstudios.com/our-work/",
+    linkLabel: "Explore tools",
   },
   {
     id: 6,
-    title: "Supply Chain Intelligence",
+    title: "RAG-indexed Tools",
     image: "/projects/company-06.jpg",
-    tags: ["Prediction", "Automation"],
-    href: "https://example.com",
+    tags: ["RAG", "Organisation data", "Intelligence"],
+    href: "https://futurelabstudios.com/our-work/",
+    linkLabel: "Explore tools",
   },
   {
     id: 7,
-    title: "Enterprise Data Assistant",
+    title: "Learning Management Systems",
     image: "/projects/company-07.jpg",
-    tags: ["Agents", "RAG"],
-    href: "https://example.com",
+    tags: ["Learning", "Personalisation", "Adaptive paths"],
+    href: "https://futurelabstudios.com/our-work/",
+    linkLabel: "Explore tools",
   },
   {
     id: 8,
-    title: "Operations Command Centre",
+    title: "Sales Agents",
     image: "/projects/company-08.jpg",
-    tags: ["Analytics", "AI"],
-    href: "https://example.com",
+    tags: ["Lead qualification", "Meetings", "Sales"],
+    href: "https://futurelabstudios.com/our-work/",
+    linkLabel: "Explore tools",
   },
   {
     id: 9,
-    title: "Clinical Intelligence Platform",
+    title: "AI Coach for Teams",
     image: "/projects/company-09.jpg",
-    tags: ["AI", "Security"],
-    href: "https://example.com",
-  },
-  {
-    id: 10,
-    title: "Risk Intelligence System",
-    image: "/projects/company-10.jpg",
-    tags: ["AI", "Risk"],
-    href: "https://example.com",
-  },
-  {
-    id: 11,
-    title: "Industrial Vision Platform",
-    image: "/projects/company-11.jpg",
-    tags: ["Computer Vision", "IoT"],
-    href: "https://example.com",
-  },
-  {
-    id: 12,
-    title: "Enterprise Automation Suite",
-    image: "/projects/company-12.jpg",
-    tags: ["Automation", "Agents"],
-    href: "https://example.com",
-  },
-  {
-    id: 13,
-    title: "Workforce Intelligence",
-    image: "/projects/company-13.jpg",
-    tags: ["Analytics", "AI"],
-    href: "https://example.com",
-  },
-  {
-    id: 14,
-    title: "Digital Transformation Platform",
-    image: "/projects/company-14.jpg",
-    tags: ["Strategy", "AI"],
-    href: "https://example.com",
-  },
-  {
-    id: 15,
-    title: "Intelligent Document System",
-    image: "/projects/company-15.jpg",
-    tags: ["RAG", "OCR"],
-    href: "https://example.com",
-  },
-  {
-    id: 16,
-    title: "Predictive Operations",
-    image: "/projects/company-16.jpg",
-    tags: ["Prediction", "AI"],
-    href: "https://example.com",
-  },
-  {
-    id: 17,
-    title: "Enterprise Search Platform",
-    image: "/projects/company-17.jpg",
-    tags: ["RAG", "Search"],
-    href: "https://example.com",
-  },
-  {
-    id: 18,
-    title: "AI Decision Platform",
-    image: "/projects/company-18.jpg",
-    tags: ["AI", "Analytics"],
-    href: "https://example.com",
-  },
-  {
-    id: 19,
-    title: "Intelligent Service Platform",
-    image: "/projects/company-19.jpg",
-    tags: ["Agents", "Automation"],
-    href: "https://example.com",
-  },
-  {
-    id: 20,
-    title: "Enterprise AI Infrastructure",
-    image: "/projects/company-20.jpg",
-    tags: ["AI", "Infrastructure"],
-    href: "https://example.com",
+    tags: ["Coaching", "Collaboration", "Productivity"],
+    href: "https://futurelabstudios.com/our-work/",
+    linkLabel: "Explore tools",
   },
 ];
 
@@ -187,7 +120,7 @@ function ProjectCard({ project }: { project: Project }) {
           rel="noopener noreferrer"
           className="company-project-card__link"
         >
-          View project
+          {project.linkLabel}
           <span>→</span>
         </a>
       </div>
@@ -197,8 +130,6 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function CompanyProjectGrid() {
   const railRef = useRef<HTMLDivElement>(null);
-
-  const [currentIndex, setCurrentIndex] = useState(1);
 
   const scrollRail = (direction: "left" | "right") => {
     const rail = railRef.current;
@@ -218,36 +149,15 @@ export function CompanyProjectGrid() {
       left: direction === "right" ? amount : -amount,
       behavior: "smooth",
     });
-
-    setCurrentIndex((current) => {
-      if (direction === "right") {
-        return Math.min(current + 1, projects.length);
-      }
-
-      return Math.max(current - 1, 1);
-    });
   };
 
   return (
-    <section
-      id="company-projects"
-      className="company-project-grid"
-    >
+    <section id="company-projects" className="company-project-grid">
       <div className="company-project-grid__container">
-
-        {/* HEADER */}
-
         <div className="company-project-grid__header">
-          <div className="company-project-grid__section-number">
-            04
-          </div>
-
           <div className="company-project-grid__title">
             <span>For Organizations</span>
-            <h2>
-              SELECTED WORK{" "}
-              
-            </h2>
+            <h2>SELECTED WORK</h2>
           </div>
 
           <div className="company-project-grid__controls">
@@ -269,29 +179,24 @@ export function CompanyProjectGrid() {
           </div>
         </div>
 
-        {/* CONTENT */}
-
         <div className="company-project-grid__content">
-
-          {/* LEFT INFORMATION */}
-
           <aside className="company-project-grid__info">
-            <span className="company-project-grid__label">
-              ENTERPRISE
-            </span>
+            <span className="company-project-grid__label">ENTERPRISE</span>
 
             <div className="company-project-grid__count">
-              <strong>20</strong>
-              <span>Enterprises</span>
+              <strong>{projects.length}</strong>
+              <span>AI solutions</span>
             </div>
 
             <p>
-              AI systems built for teams,
-              operations and enterprises.
+              AI products and custom-built tools for organisations, teams and
+              real workflows.
             </p>
 
             <a
-              href="/projects"
+              href="https://futurelabstudios.com/our-work/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="company-project-grid__view-all"
             >
               View all
@@ -299,45 +204,14 @@ export function CompanyProjectGrid() {
             </a>
           </aside>
 
-          {/* PROJECT RAIL */}
-
           <div className="company-project-grid__rail-wrap">
-            <div
-              ref={railRef}
-              className="company-project-grid__rail"
-            >
+            <div ref={railRef} className="company-project-grid__rail">
               {projects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                />
+                <ProjectCard key={project.id} project={project} />
               ))}
             </div>
           </div>
-
         </div>
-
-        {/* FOOTER / PROGRESS */}
-
-        <div className="company-project-grid__footer">
-          <span className="company-project-grid__progress-count">
-            {String(currentIndex).padStart(2, "0")}
-            <span>/20</span>
-          </span>
-
-          <div className="company-project-grid__progress">
-            <span
-              style={{
-                width: `${(currentIndex / projects.length) * 100}%`,
-              }}
-            />
-          </div>
-
-          <span className="company-project-grid__progress-label">
-            SCROLL TO EXPLORE
-          </span>
-        </div>
-
       </div>
     </section>
   );
