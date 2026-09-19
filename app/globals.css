@@ -249,3 +249,325 @@ section {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* =========================================================
+   FUTURELAB COHESIVE DESIGN SYSTEM
+   One visual language across every section.
+========================================================= */
+
+:root {
+  --page: #f7f8fa;
+  --page-strong: #f1f3f6;
+  --surface: #ffffff;
+  --ink: #111827;
+  --ink-soft: #475467;
+  --ink-muted: #667085;
+  --line: #e3e7ed;
+  --line-strong: #d6dce5;
+  --brand: #526eff;
+  --brand-soft: rgba(82, 110, 255, 0.08);
+  --content-width: 1240px;
+  --section-x: clamp(20px, 5vw, 64px);
+  --section-y: clamp(80px, 9vw, 128px);
+  --section-gap: clamp(30px, 4vw, 48px);
+  --radius: 14px;
+  --radius-sm: 10px;
+}
+
+html { background: var(--page); }
+
+body {
+  background: var(--page);
+  color: var(--ink);
+}
+
+main {
+  background: var(--page);
+}
+
+/* Every major section now shares the same canvas. */
+.company-logos,
+.company-project-grid,
+.individual-project-grid,
+.what-we-do,
+.our-approach,
+.client-testimonials,
+.work-with-us,
+.site-footer {
+  background: var(--page);
+  border-color: var(--line);
+}
+
+/* One container width and one spacing rhythm. */
+.company-logos__header,
+.company-logos__footer,
+.company-project-grid__container,
+.individual-project-grid__container,
+.what-we-do__container,
+.our-approach__sticky,
+.client-testimonials__container,
+.work-with-us__container,
+.site-footer__container {
+  width: min(var(--content-width), calc(100% - (var(--section-x) * 2)));
+  margin-inline: auto;
+}
+
+/* Shared section rhythm. */
+.company-logos,
+.company-project-grid,
+.individual-project-grid,
+.what-we-do,
+.our-approach,
+.client-testimonials,
+.work-with-us {
+  padding-block: var(--section-y);
+}
+
+/* Shared section heading language. */
+.company-logos__header,
+.company-project-grid__header,
+.individual-project-grid__header,
+.what-we-do__header,
+.client-testimonials__header,
+.work-with-us__header,
+.our-approach__eyebrow {
+  margin-bottom: var(--section-gap);
+}
+
+.company-logos__header h2,
+.company-project-grid__title h2,
+.individual-project-grid__title h2,
+.what-we-do__header h2,
+.client-testimonials__header h2 {
+  color: var(--ink);
+  font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.company-logos__eyebrow,
+.company-project-grid__title > span,
+.individual-project-grid__title > span,
+.what-we-do__section-number,
+.our-approach__eyebrow,
+.client-testimonials__header span,
+.work-with-us__header,
+.site-footer__header {
+  color: var(--brand);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* Remove the artificial magazine page-number system. */
+.company-project-grid__section-number,
+.individual-project-grid__section-number,
+.client-testimonials__header > span,
+.our-approach__eyebrow > span:first-child,
+.our-approach__eyebrow > span:nth-child(2),
+.work-with-us__header > span:first-child,
+.work-with-us__header > span:nth-child(2),
+.site-footer__header > span:first-child,
+.site-footer__header > span:nth-child(2) {
+  display: none;
+}
+
+/* Headers should read as one family rather than unrelated compositions. */
+.company-project-grid__header,
+.individual-project-grid__header {
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+}
+
+.company-project-grid__content,
+.individual-project-grid__content {
+  margin-left: 0;
+  gap: 32px;
+}
+
+.company-project-grid__info,
+.individual-project-grid__info {
+  border-right: 1px solid var(--line);
+  padding-right: 28px;
+}
+
+.company-project-grid__label,
+.individual-project-grid__label {
+  background: var(--brand-soft);
+  color: var(--brand);
+  border: 1px solid rgba(82,110,255,.12);
+  border-radius: 999px;
+}
+
+.company-project-card,
+.individual-project-card,
+.client-testimonials__panel,
+.work-with-us__panel,
+.our-approach__panel,
+.what-we-do__panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 8px 30px rgba(16,24,40,.045);
+}
+
+/* Cards use the same treatment everywhere. */
+.company-project-card,
+.individual-project-card {
+  border-radius: var(--radius-sm);
+  border-color: var(--line);
+  background: var(--surface);
+}
+
+.company-project-card:hover,
+.individual-project-card:hover {
+  box-shadow: 0 16px 38px rgba(16,24,40,.08);
+}
+
+.company-project-card__tags span,
+.individual-project-card__tags span {
+  border-color: var(--line);
+  background: var(--page);
+  border-radius: 999px;
+  color: var(--ink-muted);
+}
+
+/* Controls share one shape, border and interaction language. */
+.company-project-grid__controls button,
+.individual-project-grid__controls button {
+  border-color: var(--line-strong);
+  background: var(--surface);
+  border-radius: 999px;
+  color: var(--ink);
+}
+
+.company-project-grid__controls button:hover,
+.individual-project-grid__controls button:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: var(--brand-soft);
+}
+
+/* Approach and CTA no longer look like products from a different design system. */
+.our-approach__panel,
+.work-with-us__panel,
+.client-testimonials__panel {
+  background: var(--surface);
+}
+
+.work-with-us__button {
+  background: var(--ink);
+  border-radius: 999px;
+}
+
+.work-with-us__button:hover {
+  background: #1d2939;
+}
+
+.client-testimonials__stat,
+.our-approach__detail {
+  border-color: var(--line);
+}
+
+.our-approach__detail {
+  background: var(--brand-soft);
+}
+
+.client-testimonials__controls button.is-active,
+.client-testimonials__stat strong {
+  color: var(--brand);
+}
+
+.client-testimonials__controls button.is-active {
+  background: var(--brand);
+}
+
+/* Footer becomes the same system's closing frame, not another boxed website. */
+.site-footer {
+  padding-block: 0 var(--section-y);
+  border-top: 0;
+}
+
+.site-footer__container {
+  border-color: var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 8px 30px rgba(16,24,40,.035);
+}
+
+/* Hero keeps its distinct opening moment, but uses the same tokens. */
+.hero {
+  background: var(--page);
+  color: var(--ink);
+}
+
+.hero__button {
+  background: var(--ink);
+  border-radius: 999px;
+}
+
+.hero__button:hover {
+  background: #1d2939;
+}
+
+.hero__eyebrow {
+  color: var(--brand);
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: .12em;
+}
+
+/* Logo wall should transition into the page instead of creating a new site. */
+.company-logos {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.company-logos__header h2 {
+  max-width: 14ch;
+}
+
+@media (max-width: 900px) {
+  .company-project-grid__content,
+  .individual-project-grid__content {
+    gap: 24px;
+  }
+
+  .company-project-grid__info,
+  .individual-project-grid__info {
+    border-right: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --section-x: 20px;
+    --section-y: 72px;
+  }
+
+  .company-project-grid__header,
+  .individual-project-grid__header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .company-project-grid__content,
+  .individual-project-grid__content {
+    display: block;
+  }
+
+  .company-project-grid__info,
+  .individual-project-grid__info {
+    margin-bottom: 28px;
+  }
+
+  .company-project-grid__title h2,
+  .individual-project-grid__title h2,
+  .what-we-do__header h2,
+  .client-testimonials__header h2 {
+    font-size: 1.75rem;
+  }
+}
