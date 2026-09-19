@@ -1376,3 +1376,62 @@ small {
     display: none;
   }
 }
+
+
+/* =========================================================
+   APPROACH TYPOGRAPHY
+   Match the readable scale used across the rest of the site.
+========================================================= */
+
+@media (min-width: 1101px) {
+  .our-approach__eyebrow {
+    font-size: 0.75rem;
+  }
+
+  .our-approach__intro h2 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .our-approach__intro p {
+    max-width: 18rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .our-approach__learn {
+    font-size: 0.85rem;
+  }
+
+  .our-approach__number {
+    font-size: 0.72rem;
+  }
+
+  .our-approach__step-copy strong,
+  .our-approach__step--active .our-approach__step-copy strong {
+    font-size: 0.95rem;
+  }
+
+  .our-approach__step-copy small {
+    max-width: 11rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .our-approach__detail-number {
+    font-size: 0.78rem;
+  }
+
+  .our-approach__detail-text strong {
+    font-size: 0.95rem;
+  }
+
+  .our-approach__detail-text p {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .our-approach__bottom {
+    font-size: 0.75rem;
+  }
+}
