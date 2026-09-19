@@ -10,14 +10,6 @@ export function WorkWithUs() {
     >
       <div className="work-with-us__container">
 
-        {/* HEADER */}
-
-        <div className="work-with-us__header">
-          <span>11</span>
-          <span>—</span>
-          <span>WORK WITH US (ORGANISATIONS)</span>
-        </div>
-
         {/* MAIN PANEL */}
 
         <div className="work-with-us__panel">
@@ -104,18 +96,6 @@ export function WorkWithUs() {
 
           </div>
 
-        </div>
-
-        {/* FOOTER */}
-
-        <div className="work-with-us__footer">
-          <span>
-            LETS BUILD SOMETHING USEFUL
-          </span>
-
-          <span>
-            HELLO@FUTURELAB.COM
-          </span>
         </div>
 
       </div>
