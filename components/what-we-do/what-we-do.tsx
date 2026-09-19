@@ -250,10 +250,6 @@ export function WhatWeDo() {
               key={activeService.id}
               className="what-we-do__content"
             >
-              <span className="what-we-do__content-number">
-                {activeService.number}
-              </span>
-
               <h3>{activeService.title}</h3>
 
               <p>
