@@ -282,19 +282,6 @@ export function WhatWeDo() {
           </div>
         </div>
 
-        {/* FOOTER */}
-
-        <div className="what-we-do__footer">
-          <span>
-            {activeService.number}
-            <span>/06</span>
-          </span>
-
-          <span>
-            SELECT A SERVICE TO EXPLORE
-          </span>
-        </div>
-
       </div>
     </section>
   );
