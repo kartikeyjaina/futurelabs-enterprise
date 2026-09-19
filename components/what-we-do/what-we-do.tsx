@@ -198,10 +198,6 @@ export function WhatWeDo() {
         {/* HEADER */}
 
         <header className="what-we-do__header">
-          <span className="what-we-do__section-number">
-            06
-          </span>
-
           <h2>WHAT WE DO</h2>
         </header>
 
